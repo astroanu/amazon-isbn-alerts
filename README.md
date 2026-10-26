@@ -1,4 +1,4 @@
-# amazon-alerts
+# amazon-isbn-alerts
 
 Periodic AWS Lambda (Node 22, TypeScript, CDK) that checks Amazon product pages by ISBN and emails you when they are in stock.
 
@@ -8,13 +8,13 @@ npm install
 npx cdk bootstrap   # once
 npx cdk deploy [-c schedule="rate(30 minutes)"]
 ```
-Default schedule: `rate(1 hour)`.
+Default schedule: `rate(1 day)`.
 
 ## Config
 Upload `config.json` to the bucket printed as `ConfigBucketName`:
 ```json
 {
-  "market": "amazon.nl",
+  "market": "amazon.de",
   "isbns": ["9780140328721"],
   "email": "you@example.com",
   "senderEmail": "you@example.com",
