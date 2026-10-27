@@ -36,7 +36,7 @@ export class AmazonAlertsStack extends cdk.Stack {
       })
     );
 
-    const schedule = this.node.tryGetContext("schedule") ?? "rate(1 hour)";
+    const schedule = this.node.tryGetContext("schedule") ?? "rate(1 day)";
     new events.Rule(this, "Schedule", {
       schedule: events.Schedule.expression(schedule),
       targets: [new targets.LambdaFunction(fn)],
